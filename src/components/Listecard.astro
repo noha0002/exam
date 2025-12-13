@@ -1,0 +1,63 @@
+---
+const { data } = Astro.props;
+---
+
+<article>
+  <img
+    src={`https://vbpmdrgfyaoqwntxnhhw.supabase.co/storage/v1/object/public/products/${data.image}`}
+    alt={data.name}
+    width="300"
+    height="250"
+  />
+  <div>
+    <h2>{data.name}</h2>
+    <p>kr. {data.price},-</p>
+  </div>
+</article>
+
+<style>
+  article:nth-child(1) img {
+    border: 5px solid #f387c1;
+    width: 320px;
+  }
+
+  article:nth-child(2) img {
+    border: 5px solid #3b7751;
+    width: 320px;
+  }
+
+  article:nth-child(3) img {
+    border: 5px solid #f387c1;
+    width: 320px;
+  }
+  article:nth-child(4) img {
+    border: 5px solid #3b7751;
+    width: 320px;
+  }
+
+  article:nth-child(5) img {
+    border: 5px solid #f387c1;
+    width: 320px;
+  }
+  article:nth-child(6) img {
+    border: 5px solid #3b7751;
+    width: 320px;
+  }
+
+  div {
+    background-color: #a3ad7e;
+    width: 320px;
+    padding: 5px;
+    position: relative;
+    bottom: 8vh;
+  }
+  h2 {
+    margin: 0;
+    color: #3c4b04;
+    font-size: small;
+  }
+  p {
+    color: #ffffff;
+    font-size: 1.5vh;
+  }
+</style>

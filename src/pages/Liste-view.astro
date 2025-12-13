@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Listecard from "../components/Listecard.astro";
+
+const url =
+  "https://vbpmdrgfyaoqwntxnhhw.supabase.co/rest/v1/products-matcha?select=*";
+const key = "sb_publishable_4Enm3dMyMM7kZVCZmPwaZw_9hKcD9RH";
+
+const option = { headers: { apikey: key } };
+
+const data = await fetch(url, option).then((res) => res.json());
+console.log(data);
+---
+
+<Layout>
+  <h1>products</h1>
+  <section>
+    {data.map((product) => <Listecard data={product} />)}
+  </section>
+</Layout>
+<style>
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2vh;
+  justify-items: center;
+}
+</style>
