@@ -2,18 +2,20 @@
 const { data } = Astro.props;
 ---
 
-<article>
-  <img
-    src={`https://vbpmdrgfyaoqwntxnhhw.supabase.co/storage/v1/object/public/products/${data.image}`}
-    alt={data.name}
-    width="300"
-    height="250"
-  />
-  <div>
-    <h2>{data.name}</h2>
-    <p>kr. {data.price},-</p>
-  </div>
-</article>
+
+  <article>
+    <img
+      src={`https://vbpmdrgfyaoqwntxnhhw.supabase.co/storage/v1/object/public/products/${data.image}`}
+      alt={data.name}
+      width="300"
+      height="250"
+    />
+    <div>
+      <h2>{data.name}</h2>
+      <p>kr. {data.price},-</p>
+    </div>
+  </article>
+
 
 <style>
   article:nth-child(1) img {
@@ -73,4 +75,3 @@ const { data } = Astro.props;
     font-size: 1.5vh;
   }
 </style>
-
