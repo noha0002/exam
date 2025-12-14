@@ -1,0 +1,152 @@
+<footer>
+  <div class="grid">
+    <div class="first">
+      <h5>Follow Our Journey</h5>
+
+      <div class="footer-socials">
+        <!--Sørg for at linket åbner i en ny fane -->
+        <a class="tiktok" href="https://www.tiktok.com/@matchabike">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+            <circle cx="25" cy="25" r="25" fill="#3C4B04"></circle>
+            <path
+              d="M38 17.7607V22.2678C36.1746 22.5682 32.678 21.3914 31.1578 20.7654V30.5308C31.1578 37.1412 26.0895 38.9304 23.5554 38.9987C8.73145 39.1694 10.2521 21.141 23.5554 21.5166V26.0237C15.1935 26.3993 18.2343 35.4135 23.5554 34.2867C25.9881 33.3853 26.5963 31.4072 26.5963 30.5308V11H31.1578C31.1578 14.9062 35.7193 17.1347 38 17.7607Z"
+              fill="#FFBBEA"></path>
+          </svg>
+        </a>
+
+        <!--Sørg for at linket åbner i en ny fane -->
+        <a class="insta" href="https://www.instagram.com/matchabikedk/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+            <circle cx="25" cy="25" r="25" fill="#3C4B04"></circle>
+            <circle cx="25.0148" cy="25.0148" r="5.09513" stroke="#FFBBEA" stroke-width="3"></circle>
+            <circle cx="32.4339" cy="17.5953" r="1.64878" fill="#FFBBEA"></circle>
+            <rect x="12.4999" y="12.5" width="25.0293" height="25.0293" rx="6.5" stroke="#FFBBEA" stroke-width="3"></rect>
+          </svg>
+        </a>
+      </div>
+      <p class="footer-hvid-tekst">Stay updated with our daily locations and special events!</p>
+    </div>
+
+    <div class="second">
+      <div>
+        <p class="footer-bold-tekst">Services</p>
+        <ul>
+          <li>Events</li>
+          <li>Storefront Partnerships</li>
+          <li>Street Sales</li>
+          <li>Custom Branding</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-bold-tekst">Quick Links</p>
+        <ul>
+          <li><a href="">Book Now</a></li>
+          <li><a href="/Liste-view">Products</a></li>
+          <li><a href="/galleri">See Us In Action</a></li>
+          <li><a href="">Frequently Asked Questions</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-bold-tekst">Explore Our Menu</p>
+        <ul>
+          <li>Iced Mathca Latte</li>
+          <li>Matcha Snacks</li>
+          <li>Drink Boosters</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="third">
+      <a href="/index">
+        <img src="../assets/logo-pink.png" alt="logo 'The Matcha Bike' i pink" />
+      </a>
+      <p class="footer-hvid-tekst">Copenhagen's mobile matcha <br /> experience, bringing authentic<br /> Japanese matcha and artisanal cookies <br /> to your events and partnerships.</p>
+    </div>
+  </div>
+  <p class="copyright"><b>© The Matcha Bike</b> | CVR: 45606848 | Copenhagen, Denmark</p>
+</footer>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@400&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+
+  footer {
+    background-color: #818c58;
+    max-height: 330px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  .first {
+    grid-column: 1/3;
+  }
+  .second {
+    grid-column: 4/10;
+
+    display: flex;
+    gap: 80px;
+    margin: 80px 0;
+    margin-bottom: 10px;
+  }
+  .third {
+    grid-column: 10/13;
+    margin-top: 130px;
+    text-align: end;
+  }
+
+  h5 {
+    font-family: "Gluten";
+    font-size: 20px;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .footer-bold-tekst {
+    font-family: "Gluten";
+    font-size: 16px;
+  }
+
+  .footer-hvid-tekst {
+    font-family: "Inter";
+    font-size: 15px;
+    color: white;
+  }
+
+  footer ul {
+    font-family: "Inter";
+    font-size: 13px;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: black;
+  }
+  footer a:hover {
+    color: #707070;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    font-family: "Inter";
+    font-size: 12px;
+    margin-top: 0px;
+    padding-bottom: 20px;
+  }
+</style>
