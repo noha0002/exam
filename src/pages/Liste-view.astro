@@ -87,7 +87,7 @@ console.log(data);
     if (category === "Matcha") {
       filter = allData;
     } else {
-      filter = allData.filter((product) => product.category === category);
+      filter = allData.filter((product) => product.categories === categories);
     }
     showProducts(filter);
   }
