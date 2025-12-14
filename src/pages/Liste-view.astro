@@ -4,9 +4,15 @@ import Listecard from "../components/Listecard.astro";
 
 const url =
   "https://vbpmdrgfyaoqwntxnhhw.supabase.co/rest/v1/products-matcha?select=*";
-const key = "sb_publishable_4Enm3dMyMM7kZVCZmPwaZw_9hKcD9RH";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZicG1kcmdmeWFvcXdudHhuaGh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxMDE0MjIsImV4cCI6MjA3ODY3NzQyMn0.Zz_G8BqEI3AH2YWBnQ1ikKdVL1uvRCbib2tyQ5Bbk5M";
 
-const option = { headers: { apikey: key } };
+const option = {
+  headers: {
+    apikey: key,
+    Authorization: `Bearer ${key}`,
+  },
+};
 
 const data = await fetch(url, option).then((res) => res.json());
 console.log(data);
@@ -14,15 +20,87 @@ console.log(data);
 
 <Layout>
   <h1>products</h1>
+  <p>
+    Discover our products! all from refreshing drinks, a small snack, our very
+    own hand-made ceramics, and last but not least, our organic & healthy
+    syrups!
+  </p>
+  <hr />
+  <section id="filters">
+    <button data-categories="Matcha">MATCHA</button>
+    <button data-categories="Cookies">COOKIES</button>
+    <button data-categories="Ceramics">CERAMICS</button>
+  </section>
+
   <section>
     {data.map((product) => <Listecard data={product} />)}
   </section>
 </Layout>
+
 <style>
-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2vh;
-  justify-items: center;
-}
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2vh;
+    justify-items: center;
+  }
+
+  #filters {
+    display: flex;
+    margin-bottom: 4vh;
+    gap: 2vh;
+  }
+
+  #filters button[data-categories="Matcha"],
+  [data-categories="Ceramics"] {
+    background-color: #979e7b;
+    width: 100px;
+    height: 20px;
+    border: none;
+    padding: 1rem;
+    line-height: 0.2;
+    color: white;
+  }
+
+  #filters button[data-categories="Cookies"] {
+    background-color: #dd9abe;
+    color: white;
+    width: 100px;
+    height: 20px;
+    border: none;
+    padding: 1rem;
+    line-height: 0.2;
+  }
+
+ 
 </style>
+
+<script>
+  document
+    .querySelectorAll("#filters button")
+    .forEach((knap) => knap.addEventListener("click", showFiltered));
+
+  function showFiltered() {
+    const category = this.dataset.categories;
+    console.log(category);
+    const categories = this.dataset.categories;
+    if (category === "Matcha") {
+      filter = allData;
+    } else {
+      filter = allData.filter((product) => product.categories === categories);
+    }
+    showProducts(filter);
+  }
+
+  let allData;
+  let filter;
+  const enConstant = 1;
+  fetch(
+    `https://vbpmdrgfyaoqwntxnhhw.supabase.co/storage/v1/object/public/products/${data.categories}`
+  )
+    .then((response) => response.json())
+    .then((json) => {
+      allData = json;
+      showProducts(allData);
+    });
+</script>
