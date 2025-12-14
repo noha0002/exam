@@ -1,0 +1,17 @@
+---
+const { data } = Astro.props;
+---
+
+<section>
+  <img
+    src={`https://vbpmdrgfyaoqwntxnhhw.supabase.co/storage/v1/object/public/products/${data.image}`}
+    alt={data.name}
+    width="300"
+    height="250"
+  />
+  <div>
+    <h2>{data.name}</h2>
+    <p>kr. {data.price},-</p>
+    <p>{data.description}</p>
+  </div>
+</section>

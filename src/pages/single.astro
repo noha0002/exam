@@ -1,9 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Singlecard from "../components/Singlecard.astro";
+const datatId = 1;
+const url = `https://vbpmdrgfyaoqwntxnhhw.supabase.co/rest/v1/products-matcha?id=eq.${datatId}`;
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZicG1kcmdmeWFvcXdudHhuaGh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxMDE0MjIsImV4cCI6MjA3ODY3NzQyMn0.Zz_G8BqEI3AH2YWBnQ1ikKdVL1uvRCbib2tyQ5Bbk5M";
+
+const option = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(url, option).then((res) => res.json());
+console.log(data);
 
 ---
 
 <Layout>
   <h1>hej</h1>
-  
+  <section>
+    {data.map((product) => <Singlecard data={product} />)}
+  </section>
 </Layout>
