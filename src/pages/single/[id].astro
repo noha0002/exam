@@ -1,0 +1,35 @@
+---
+export async function getStaticPaths() {
+  const url =
+    "https://vbpmdrgfyaoqwntxnhhw.supabase.co/rest/v1/products-matcha";
+  const key =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZicG1kcmdmeWFvcXdudHhuaGh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxMDE0MjIsImV4cCI6MjA3ODY3NzQyMn0.Zz_G8BqEI3AH2YWBnQ1ikKdVL1uvRCbib2tyQ5Bbk5M";
+
+  const option = {
+    headers: {
+      apikey: key,
+    },
+  };
+
+  const response = await fetch(url, option);
+  const data = await response.json();
+
+  return data.map((post) => {
+    return {
+      params: { id: post.id },
+      props: { post },
+    };
+  });
+}
+
+const { id } = Astro.params;
+const { post } = Astro.props;
+---
+
+<h1>{id}: {post.name}</h1>
+<img
+  src={`https://vbpmdrgfyaoqwntxnhhw.supabase.co/storage/v1/object/public/products/${post.image}`}
+  alt={post.name}
+  width="300"
+  height="250"
+/>
