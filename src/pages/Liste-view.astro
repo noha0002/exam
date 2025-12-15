@@ -13,8 +13,6 @@ const option = {
   },
 };
 
-
-
 const data = await fetch(url, option).then((res) => res.json());
 console.log(data);
 ---
@@ -28,9 +26,10 @@ console.log(data);
   </p>
   <hr />
   <section id="filters">
-    <button data-categories="Matcha">MATCHA</button>
-    <button data-categories="Cookies">COOKIES</button>
-    <button data-categories="Ceramics">CERAMICS</button>
+    <button data-categories="All">ALL</button>
+    <button data-categories="matcha">MATCHA</button>
+    <button data-categories="cookie">COOKIES</button>
+    <button data-categories="ceramics">CERAMICS</button>
   </section>
 
   <section>
@@ -72,8 +71,6 @@ console.log(data);
     padding: 1rem;
     line-height: 0.2;
   }
-
- 
 </style>
 
 <script>
@@ -84,24 +81,13 @@ console.log(data);
   function showFiltered() {
     const category = this.dataset.categories;
     console.log(category);
-    const categories = this.dataset.categories;
-    if (category === "Matcha") {
-      filter = allData;
-    } else {
-      filter = allData.filter((product) => product.category === category);
-    }
-    showProducts(filter);
-  }
-
-  let allData;
-  let filter;
-  const enConstant = 1;
-  fetch(
-    `https://vbpmdrgfyaoqwntxnhhw.supabase.co/storage/v1/object/public/products/${data.categories}`
-  )
-    .then((response) => response.json())
-    .then((json) => {
-      allData = json;
-      showProducts(allData);
+    document.querySelectorAll("article").forEach((item) => {
+      console.log(item.dataset.categories);
+      if (item.dataset.categories.includes(category) || category == "All") {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
     });
+  }
 </script>
