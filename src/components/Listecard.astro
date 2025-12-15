@@ -2,7 +2,7 @@
 const { data } = Astro.props;
 ---
 
-
+<a href={`/single/${data.id}`}>
   <article>
     <img
       src={`https://vbpmdrgfyaoqwntxnhhw.supabase.co/storage/v1/object/public/products/${data.image}`}
@@ -15,7 +15,7 @@ const { data } = Astro.props;
       <p>kr. {data.price},-</p>
     </div>
   </article>
-
+</a>
 
 <style>
   article:nth-child(1) img {
