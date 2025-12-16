@@ -37,6 +37,28 @@ const data = await fetch(url, option).then((res) => res.json());
 </Layout>
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@400;700;800;900&display=swap");
+  h1,
+  p {
+    margin: 1%;
+  }
+
+  h1 {
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
+    font-family: "Gluten", serif, bold;
+    font-size: 2.5rem;
+  }
+
+  p {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    width: 380px;
+    margin: 0 auto;
+    white-space: pre-wrap;
+    padding-bottom: 2%;
+  }
   section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -46,12 +68,16 @@ const data = await fetch(url, option).then((res) => res.json());
 
   #filters {
     display: flex;
-    margin-bottom: 4vh;
     gap: 2vh;
+    justify-content: center; 
+    flex-wrap: wrap;
+    margin-bottom: 4vh;
   }
 
-  #filters button[data-categories="Matcha"],
-  [data-categories="Ceramics"] {
+  #filters button[data-categories="matcha"],
+  #filters button[data-categories="ceramics"] {
+    display: flex;
+    flex-wrap: wrap;
     background-color: #979e7b;
     width: 100px;
     height: 20px;
@@ -61,7 +87,8 @@ const data = await fetch(url, option).then((res) => res.json());
     color: white;
   }
 
-  #filters button[data-categories="Cookies"] {
+  #filters button[data-categories="cookie"],
+  #filters button[data-categories="All"] {
     background-color: #dd9abe;
     color: white;
     width: 100px;
@@ -70,6 +97,7 @@ const data = await fetch(url, option).then((res) => res.json());
     padding: 1rem;
     line-height: 0.2;
   }
+  
 </style>
 
 <script>
