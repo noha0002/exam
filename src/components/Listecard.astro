@@ -2,20 +2,18 @@
 const { data } = Astro.props;
 ---
 
-<a href={`/single/${data.id}`}>
-  <article>
-    <img
-      src={`https://vbpmdrgfyaoqwntxnhhw.supabase.co/storage/v1/object/public/products/${data.image}`}
-      alt={data.name}
-      width="300"
-      height="250"
-    />
-    <div>
-      <h2>{data.name}</h2>
-      <p>kr. {data.price},-</p>
-    </div>
-  </article>
-</a>
+<article data-categories={data.categories}>
+  <img
+    src={`https://vbpmdrgfyaoqwntxnhhw.supabase.co/storage/v1/object/public/products/${data.image}`}
+    alt={data.name}
+    width="300"
+    height="250"
+  />
+  <div>
+    <h2>{data.name}</h2>
+    <p>kr. {data.price},-</p>
+  </div>
+</article>
 
 <style>
   article:nth-child(1) img {
