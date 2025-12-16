@@ -1,0 +1,78 @@
+---
+const { src, srclogo, SomeBeskrivelse, SomeLink } = Astro.props;
+---
+
+<article>
+  <img src={src} alt="" width="360" height="270" />
+
+  <div class="at">
+    <img src={srclogo} alt="" width="auto" height="28" />
+    <p>{SomeBeskrivelse}</p>
+  </div>
+
+  <div class="knap">
+    <a href={SomeLink} target="_blank">Go here</a>
+  </div>
+</article>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;600&display=swap");
+  article {
+    height: 415px;
+    width: 360px;
+    border-radius: 20px;
+    background-color: #f4dfdf;
+
+    margin-bottom: 50px;
+    margin-left: 50px;
+  }
+
+  img {
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  p {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .at {
+    margin: 10px;
+    padding-left: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  .at img {
+    border-radius: 0;
+  }
+
+  .knap {
+    display: flex;
+    justify-content: center;
+  }
+
+  a {
+    background-color: white;
+    padding: 10px 50px;
+    border-radius: 20px;
+
+    font-family: "Gochi Hand";
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+
+    margin-top: 20px;
+  }
+  a:hover {
+    border: 2px solid black; /*#818c58*/
+
+    /*
+    background-color: #dd9abe;
+    color: white;
+    transition: 0.3s;
+    */
+  }
+</style>

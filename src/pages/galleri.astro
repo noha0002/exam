@@ -1,8 +1,290 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import SoMecard from "../components/Listecard.astro";
+import SoMecard from "../components/SoMecard.astro";
 ---
 
 <Layout>
-  <h1>See Us In Action!</h1>
+  <main>
+    <div class="center">
+      <div>
+        <h1>See Us <span class="grøn-text"> In Action!</span></h1>
+        <p class="centre">Discover how we bring matcha to life through events, community engagement, and our exciting social media presence. Follow our journey across Copenhagen and see why companies love working with us.</p>
+      </div>
+    </div>
+
+    <div class="grøn">
+      <div class="gallery-text">
+        <h2><span class="grøn-text">Explore Our Gallery!</span></h2>
+        <p>Experience photos from our events, and the excitement of The Matcha Bike through our dynamic social media presence. Take At Look At Some Of Our Pics from delicious moments at events to our vibrant community engagements.</p>
+      </div>
+
+      <section class="gallery">
+        <!--Husk skift billeder, Lav 'scroll through gallery' & Tilføj knapper -->
+        <img src="https://picsum.photos/375/500" alt="" />
+        <img src="https://picsum.photos/375/500" alt="" />
+        <img src="https://picsum.photos/375/500" alt="" />
+        <img src="https://picsum.photos/375/500" alt="" />
+        <!-- 
+        <img src="https://picsum.photos/375/500" alt="" />
+        <img src="https://picsum.photos/375/500" alt="" />
+        <img src="https://picsum.photos/375/500" alt="" />
+        <img src="https://picsum.photos/375/500" alt="" />
+        <img src="https://picsum.photos/375/500" alt="" />
+        <img src="https://picsum.photos/375/500" alt="" />
+        <img src="https://picsum.photos/375/500" alt="" />
+        <img src="https://picsum.photos/375/500" alt="" />
+        <img src="https://picsum.photos/375/500" alt="" />
+        -->
+      </section>
+    </div>
+
+    <div>
+      <div class="center">
+        <h3>Follow Us For Daily Locations, Updates <span class="grøn-text">&</span> Behind-The-Scenes Content</h3>
+      </div>
+      <section class="cards">
+        <SoMecard src="src/assets/insta-billede.webp" SomeBeskrivelse="@matchabikedk" srclogo="src/assets/inst.svg" SomeLink="https://www.instagram.com/matchabikedk/" />
+
+        <SoMecard src="src/assets/tiktok-billede.webp" SomeBeskrivelse="@matchabike" srclogo="src/assets/tik.svg" SomeLink="https://www.tiktok.com/@matchabike" />
+
+        <SoMecard src="src/assets/facebook-billede.webp" SomeBeskrivelse="@The Matcha Bike" srclogo="src/assets/face.svg" SomeLink="https://www.facebook.com/profile.php?id=61579941120830" />
+      </section>
+    </div>
+
+    <div>
+      <h3 class="join"><span class="grøn-text">Join us</span> 'On the Move'!</h3>
+
+      <section class="last">
+        <!--Lav interaktiv i js -->
+        <div class="live-map">
+          <div>
+            <img class="map" src="src/assets/map.svg" alt="map" />
+          </div>
+          <div class="dot1">
+            <img src="src/assets/location.svg" alt="current location icon" />
+            <div class="dot-adress">
+              <p>Hørsholmsgade 20, <br /> opgang C <br /> 2200 København N</p>
+            </div>
+          </div>
+          <div class="dot2">
+            <img src="src/assets/upcoming.svg" alt="upcoming events icon" /><div class="dot-adress">
+              <p>Hørsholmsgade 20, <br /> opgang C <br /> 2200 København N</p>
+            </div>
+          </div>
+          <div class="dot3">
+            <img src="src/assets/hotspot.svg" alt="customer hotspots icon" /><div class="dot-adress">
+              <p>Hørsholmsgade 20, <br /> opgang C <br /> 2200 København N</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mørke-grøn">
+          <div class="list">
+            <h5 class="hvid-text">Follow Our Live Map</h5>
+
+            <li><p class="hvid-text">Current Location</p></li>
+            <div class="bike"><img src="src/assets/location.svg" alt="" /></div>
+
+            <li><p class="hvid-text">Upcoming Events</p></li>
+            <div class="listings"><img src="src/assets/upcoming.svg" alt="" /></div>
+
+            <li><p class="hvid-text">Customer Hotspots</p></li>
+            <div class="listings"><img src="src/assets/hotspot.svg" alt="" /></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
 </Layout>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@600&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;600&display=swap");
+
+  main {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Gluten", sans-serif;
+  }
+  h1 {
+    font-size: 64px;
+  }
+  h2 {
+    font-size: 48px;
+  }
+  h3 {
+    font-size: 40px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+
+    text-align: center;
+    max-width: 40ch;
+  }
+  .join {
+    margin-left: 60px;
+    padding: 0;
+    text-align: start;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 15px;
+    /*line-height: 1.6;*/
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+
+  .centre {
+    text-align: center;
+  }
+
+  p,
+  h5 {
+    font-family: "Inter", sans-serif;
+    max-width: 60ch;
+  }
+
+  .grøn-text {
+    color: #3c4b04;
+  }
+
+  .grøn {
+    background-color: #b2be86;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin: -20px;
+    margin-top: 20px;
+  }
+
+  .gallery-text {
+    max-width: 800px;
+    margin-left: 60px;
+  }
+  .gallery {
+    margin-left: 20px;
+    padding-top: 20px;
+    gap: 0;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mørke-grøn {
+    background-color: #3c4b04;
+    width: 345px;
+    height: 530px;
+    border-radius: 20px;
+  }
+
+  .hvid-text {
+    color: white;
+  }
+
+  section {
+    display: flex;
+    gap: 50px;
+  }
+
+  .map {
+    border: 5px dashed #818c58;
+    padding: 50px 50px 20px 20px;
+    border-radius: 10px;
+    margin-left: 60px;
+  }
+  .map img {
+    width: 700px;
+    height: 500px;
+  }
+
+  .dot1 {
+    position: relative;
+    top: -250px;
+    left: 440px;
+  }
+  .dot2 {
+    position: relative;
+    top: -550px;
+    left: 350px;
+  }
+  .dot3 {
+    position: relative;
+    top: -540px;
+    left: 470px;
+  }
+
+  .list {
+    list-style: disc;
+    color: white;
+    margin: 60px;
+  }
+  .list li {
+    margin-bottom: 70px;
+  }
+  .list img {
+    margin-left: 90px;
+    height: 73px;
+  }
+  .bike img {
+    margin-left: 50px;
+    height: 53px;
+    margin-top: -50px;
+  }
+  .listings {
+    margin-top: -45px;
+  }
+
+  .last {
+    margin-bottom: 40px;
+    gap: 250px;
+  }
+
+  /* Live Map Hover*/
+
+  .dot-adress {
+    position: absolute;
+    top: 0px;
+    left: 35%;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+
+    background-color: #f4dfdf;
+    width: 185px;
+    height: 70px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 3px;
+  }
+  .dot-adress p {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    margin-left: 5px;
+  }
+
+  .dot1:hover .dot-adress {
+    opacity: 1;
+  }
+  .dot2:hover .dot-adress {
+    opacity: 1;
+  }
+  .dot3:hover .dot-adress {
+    opacity: 1;
+  }
+</style>
+
+<sricpt> // Live Map Hover </sricpt>
