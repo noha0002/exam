@@ -4,25 +4,117 @@ import Listecard from "../components/Listecard.astro";
 
 const url =
   "https://vbpmdrgfyaoqwntxnhhw.supabase.co/rest/v1/products-matcha?select=*";
-const key = "sb_publishable_4Enm3dMyMM7kZVCZmPwaZw_9hKcD9RH";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZicG1kcmdmeWFvcXdudHhuaGh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxMDE0MjIsImV4cCI6MjA3ODY3NzQyMn0.Zz_G8BqEI3AH2YWBnQ1ikKdVL1uvRCbib2tyQ5Bbk5M";
 
-const option = { headers: { apikey: key } };
+const option = {
+  headers: {
+    apikey: key,
+  },
+};
 
 const data = await fetch(url, option).then((res) => res.json());
-console.log(data);
 ---
 
 <Layout>
   <h1>products</h1>
+  <p>
+    Discover our products! all from refreshing drinks, a small snack, our very
+    own hand-made ceramics, and last but not least, our organic & healthy
+    syrups!
+  </p>
+  <hr />
+  <section id="filters">
+    <button data-categories="All">ALL</button>
+    <button data-categories="matcha">MATCHA</button>
+    <button data-categories="cookie">COOKIES</button>
+    <button data-categories="ceramics">CERAMICS</button>
+  </section>
+
   <section>
     {data.map((product) => <Listecard data={product} />)}
   </section>
 </Layout>
+
 <style>
-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2vh;
-  justify-items: center;
-}
+  @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@400;700;800;900&display=swap");
+  h1,
+  p {
+    margin: 1%;
+  }
+
+  h1 {
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
+    font-family: "Gluten", serif, bold;
+    font-size: 2.5rem;
+  }
+
+  p {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    width: 380px;
+    margin: 0 auto;
+    white-space: pre-wrap;
+    padding-bottom: 2%;
+  }
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2vh;
+    justify-items: center;
+  }
+
+  #filters {
+    display: flex;
+    gap: 2vh;
+    justify-content: center; 
+    flex-wrap: wrap;
+    margin-bottom: 4vh;
+  }
+
+  #filters button[data-categories="matcha"],
+  #filters button[data-categories="ceramics"] {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #979e7b;
+    width: 100px;
+    height: 20px;
+    border: none;
+    padding: 1rem;
+    line-height: 0.2;
+    color: white;
+  }
+
+  #filters button[data-categories="cookie"],
+  #filters button[data-categories="All"] {
+    background-color: #dd9abe;
+    color: white;
+    width: 100px;
+    height: 20px;
+    border: none;
+    padding: 1rem;
+    line-height: 0.2;
+  }
+  
 </style>
+
+<script>
+  document
+    .querySelectorAll("#filters button")
+    .forEach((knap) => knap.addEventListener("click", showFiltered));
+
+  function showFiltered() {
+    const category = this.dataset.categories;
+    console.log(category);
+    document.querySelectorAll("article").forEach((item) => {
+      console.log(item.dataset.categories);
+      if (item.dataset.categories.includes(category) || category == "All") {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+</script>
