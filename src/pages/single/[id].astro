@@ -53,10 +53,9 @@ const { post } = Astro.props;
       <p class="value">{post.value}</p>
     </div>
   </section>
-  
 </Layout>
 <style>
-  
+  @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@900&display=swap");
   h1 {
     font-family: "Gluten", serif, bold;
     color: #3c4b04;
@@ -75,7 +74,7 @@ const { post } = Astro.props;
     font-family: "Gluten", serif, bold;
   }
 
-  hr{
+  hr {
     background-color: #ffbbea;
     padding: 0.2%;
     border: none;
@@ -128,5 +127,4 @@ const { post } = Astro.props;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     justify-items: center;
   }
-  
 </style>
