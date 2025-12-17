@@ -4,8 +4,139 @@ import Indexcard from "../components/Indexcard.astro";
 ---
 
 <Layout> 
-  <section>
-    <Indexcard indexTitel="events" />
-  </section>
+    <section class="hero">
+      <img src="https://picsum.photos/1480/680" alt="matchabike">
+  
+      <h1 class="overskrift">COPENHAGEN’S</h1>
+      <h1 class="overskrift1">MOBILE MATCHA EXPERIENCE</h1>
+  
+      <p class="ptekst">
+        Bringing authentic Japanese matcha and desserts directly to your events, storefronts, and special occasions across Denmark.
+      </p>
+  
+      <div class="header-buttons">
+        <button class="b1">Book Now</button>
+        <button class="b2">Menu</button>  
+      </div>
+      <section class="grid-section">
+        <Indexcard
+          indexTitel="Events"
+          indexTekst="Elevate your events - any special occasion, private or business, with our premium mobile matcha service and artisanal treats."
+          image="https://picsum.photos/1480/680"
+          buttonText="Read more"
+          buttonLink="/events"
+        />
+      
+        <Indexcard
+          indexTitel="Menu"
+          indexTekst="Indulge in our delicious matcha lattes and homemade matcha cookies — perfect for a refreshing boost anytime, anywhere!"
+          image="https://picsum.photos/1480/680"
+          buttonText="View menu"
+          buttonLink="/liste-view"
+        />
+      
+        <Indexcard
+          indexTitel="Gallery"
+          indexTekst="Stay connected with us through vibrant social media, interactive map, and captivating gallery."
+          image="https://picsum.photos/1480/680"
+          buttonText="Gallery"
+          buttonLink="/galleri"
+        />
+      </section>
+
+      <section class="grid2">
+        <div class="text-content">
+          <h1>Partnership Opportunities</h1>
+          <p>Drive foot traffic, increase brand visibility, and create memorable customer experiences through strategic partnerships with The Matcha Bike.</p>
+          <p><br><strong>Storefront Partnerships</strong></p>
+          <p>2,500 DKK for 8 hours in front of your store (or inside if bad weather). You provide discount coupons for joint promotions while we drive foot traffic to your business.</p>
+          <button class="b3">Partner With Us</button>  
+        </div>
+        <img class="img-grid" src="https://picsum.photos/300/400" alt="">
+      </section>
+      
 </Layout>
+  
+
+<style>
+    .header-buttons {
+position:absolute;
+top: 75%;
+left: 40px;
+display: flex;
+gap: 10px;
+gap: 20px;
+
+
+
+    }
+.b1{
+background-color:#818C58;
+border-radius: 20px;
+border:3px solid #000000;
+padding: 20px 20px;
+width: 200px;
+height: 60px;
+color: rgb(22, 45, 26);
+
+     
+    }
+.b2{
+background-color: #FFBBEA;
+border-radius: 20px;
+border:3px solid #000000;
+width: 200px;
+height: 60px;
+color: rgb(22, 45, 26);
+
+    }
+
+.overskrift1{
+text-align: center;
+color: #374017; 
+}
+.overskrift{
+text-align: center;
+
+}
+.ptekst{
+    text-align: center;  
+}
+.grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  padding: 80px 40px;
+}
+
+.b3{
+    background-color:#818C58;
+border-radius: 20px;
+border:3px solid #000000;
+width: 200px;
+height: 60px;
+color: rgb(22, 45, 26);
+
+}
+
+a:hover {
+    border: 2px solid black;
+}
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: center;
+  padding-left: 5%;
+  padding-bottom: 5%;
+
+}
+
+.img-grid{
+    padding-left: 30%;
+    padding-top: 20%;
+}
+
+
+</style>
 
