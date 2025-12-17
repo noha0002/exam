@@ -24,11 +24,10 @@ import SoMecard from "../components/SoMecard.astro";
         </div>
 
         <section class="gallery">
-          <!--Husk skift billeder, Lav 'scroll through gallery' & Tilføj knapper -->
-          <img src="/assets/gallery-pic (4).webp" alt="Billede taget fra The Matcha Bike X envii event" />
-          <img src="/assets/gallery-pic (3).webp" alt="Billede af The Matcha Bike på strøget" />
-          <img src="/assets/gallery-pic (2).webp" alt="Billede af The Matcha Bike udenfor en envii butik" />
-          <img src="/assets/gallery-pic (1).webp" alt="Billede af en hånd der holder en jordbær matcha latte" />
+          <img class="pic4" src="/assets/gallery-pic (4).webp" alt="Billede taget fra The Matcha Bike X envii event" />
+          <img class="pic3" src="/assets/gallery-pic (3).webp" alt="Billede af The Matcha Bike på strøget" />
+          <img class="pic2" src="/assets/gallery-pic (2).webp" alt="Billede af The Matcha Bike udenfor en envii butik" />
+          <img class="pic1" src="/assets/gallery-pic (1).webp" alt="Billede af en hånd der holder en jordbær matcha latte" />
         </section>
 
         <div class="h">
@@ -43,11 +42,11 @@ import SoMecard from "../components/SoMecard.astro";
       <h3>Follow Us For Daily Locations, Updates <span class="grøn-text">&</span> Behind-The-Scenes Content</h3>
     </div>
     <section class="cards">
-      <SoMecard src="/assets/insta-billede.webp" SomeBeskrivelse="@matchabikedk" srclogo="src/assets/inst.svg" SomeLink="https://www.instagram.com/matchabikedk/" />
+      <SoMecard src="/assets/insta-billede.webp" SomeBeskrivelse="@matchabikedk" srclogo="/assets/inst.svg" SomeLink="https://www.instagram.com/matchabikedk/" />
 
-      <SoMecard src="/assets/tiktok-billede.webp" SomeBeskrivelse="@matchabike" srclogo="src/assets/tik.svg" SomeLink="https://www.tiktok.com/@matchabike" />
+      <SoMecard src="/assets/tiktok-billede.webp" SomeBeskrivelse="@matchabike" srclogo="/assets/tik.svg" SomeLink="https://www.tiktok.com/@matchabike" />
 
-      <SoMecard src="/assets/facebook-billede.webp" SomeBeskrivelse="@The Matcha Bike" srclogo="src/assets/face.svg" SomeLink="https://www.facebook.com/profile.php?id=61579941120830" />
+      <SoMecard src="/assets/facebook-billede.webp" SomeBeskrivelse="@The Matcha Bike" srclogo="/assets/face.svg" SomeLink="https://www.facebook.com/profile.php?id=61579941120830" />
     </section>
   </div>
 
@@ -55,10 +54,9 @@ import SoMecard from "../components/SoMecard.astro";
     <h3 class="join"><span class="grøn-text">Join us</span> 'On the Move'!</h3>
 
     <section class="last">
-      <!--Lav måske interaktiv i js -->
       <div class="live-map">
         <div>
-          <img class="map" src="/assets/map.svg" alt="map" />
+          <img class="map" src="/assets/mobil-map.svg" alt="Kort over København" />
         </div>
         <div class="dot1">
           <img src="/assets/location.svg" alt="current location icon" />
@@ -112,19 +110,21 @@ import SoMecard from "../components/SoMecard.astro";
     font-family: "Gluten", sans-serif;
   }
   h1 {
-    font-size: 64px;
+    font-size: 24px;
+    text-align: center;
   }
   h2 {
-    font-size: 48px;
-    margin-bottom: 0px;
+    font-size: 18px;
   }
   h3 {
-    font-size: 40px;
-    padding-top: 30px;
+    font-size: 16px;
+
+    padding-top: 20px;
     padding-bottom: 0px;
+    margin-bottom: 0px;
 
     text-align: center;
-    max-width: 40ch;
+    max-width: 43ch;
   }
   .join {
     margin-left: 100px;
@@ -132,80 +132,95 @@ import SoMecard from "../components/SoMecard.astro";
     text-align: start;
   }
   h5 {
-    font-size: 20px;
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
   }
   p {
-    font-size: 15px;
-    /*line-height: 1.6;*/
+    font-size: 13px;
+    font-family: "Inter", sans-serif;
+    max-width: 45ch;
   }
 
   .center {
     display: flex;
     justify-content: center;
-    padding-top: 70px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   .centre {
     text-align: center;
   }
 
-  p,
-  h5 {
-    font-family: "Inter", sans-serif;
-    max-width: 60ch;
-  }
-
   .grøn-text {
     color: #3c4b04;
   }
-
   .grøn {
     background-color: #b2be86;
     padding-top: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     margin: -20px;
   }
 
   .gallery-text {
-    max-width: 800px;
-    margin-left: 60px;
+    margin-left: 20px;
   }
   .gallery {
-    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
     padding-top: 10px;
     gap: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .pic1,
+  .pic2,
+  .pic3 {
+    display: none;
+  }
+  .pic4 {
+    width: 300px;
+    height: auto;
   }
 
   .flex {
     display: flex;
-    position: relative;
+    justify-content: center;
   }
   .v {
     align-content: center;
-    margin-left: 40px;
+    margin-left: 10px;
   }
   .h {
-    position: absolute;
-    top: 45%;
-    right: 2%;
-    z-index: 10;
-    transform: translate(0, 0);
+    align-content: center;
+    margin-right: 10px;
   }
   .h img {
     transform: scaleX(-1);
+    width: 34px;
+    height: 34px;
+  }
+  .v img {
+    width: 34px;
+    height: 34px;
   }
 
   .cards {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
   }
+
+  /* Map */
 
   .mørke-grøn {
     background-color: #3c4b04;
-    width: 345px;
-    height: 530px;
+    width: 250px;
+    height: 390px;
     border-radius: 20px;
+
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 0px;
   }
 
   .hvid-text {
@@ -214,76 +229,83 @@ import SoMecard from "../components/SoMecard.astro";
 
   section {
     display: flex;
-    gap: 50px;
+    flex-direction: column;
+    gap: 0px;
   }
 
   .map {
-    border: 5px dashed #818c58;
-    padding: 50px 50px 20px 20px;
+    border: 4px dashed #818c58;
+    padding: 20px 20px 10px 10px;
     border-radius: 10px;
-    margin-left: 60px;
   }
   .map img {
-    width: 700px;
-    height: 500px;
+    justify-content: center;
+  }
+  .live-map {
+    margin-left: 30px;
+    margin-top: 20px;
+    max-height: 450px;
   }
 
   .dot1 {
     position: relative;
-    top: -250px;
-    left: 440px;
+    top: -165px;
+    left: 230px;
   }
   .dot2 {
     position: relative;
-    top: -550px;
-    left: 350px;
+    top: -380px;
+    left: 170px;
   }
   .dot3 {
     position: relative;
-    top: -540px;
-    left: 470px;
+    top: -390px;
+    left: 230px;
+
+    max-width: 50px;
+    max-height: 50px;
+  }
+  .dot1 img,
+  .dot2 img,
+  .dot3 img {
+    width: 50px;
+    height: 50px;
   }
 
   .list {
     list-style: disc;
     color: white;
-    margin: 60px;
+    margin: 40px;
   }
   .list li {
-    margin-bottom: 70px;
+    margin-bottom: 20px;
   }
   .list img {
-    margin-left: 90px;
-    height: 73px;
+    margin-left: 60px;
+    height: 53px;
   }
   .bike img {
     margin-left: 50px;
-    height: 53px;
-    margin-top: -50px;
-  }
-  .listings {
-    margin-top: -45px;
+    height: 33px;
   }
 
   .last {
-    margin-right: 50px;
-    margin-left: 50px;
-    gap: 250px;
+    gap: 0px;
   }
 
   /* Live Map Hover*/
 
   .dot-adress {
     position: absolute;
-    top: 0px;
-    left: 35%;
+    top: 50px;
+    left: 8%;
     transform: translateX(-100%);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
 
     background-color: #f4dfdf;
-    width: 185px;
+    width: 150px;
     height: 70px;
     border: 2px solid #000000;
     border-radius: 5px;
@@ -291,7 +313,7 @@ import SoMecard from "../components/SoMecard.astro";
   }
   .dot-adress p {
     font-family: "Inter", sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     margin-left: 5px;
   }
 
@@ -303,5 +325,243 @@ import SoMecard from "../components/SoMecard.astro";
   }
   .dot3:hover .dot-adress {
     opacity: 1;
+  }
+
+  /* Desktop */
+
+  @media screen and (min-width: 600px) {
+    h1,
+    h2,
+    h3 {
+      font-family: "Gluten", sans-serif;
+    }
+    h1 {
+      font-size: 64px;
+    }
+    h2 {
+      font-size: 48px;
+      margin-bottom: 0px;
+    }
+    h3 {
+      font-size: 40px;
+      padding-top: 30px;
+      padding-bottom: 0px;
+
+      text-align: center;
+      max-width: 40ch;
+    }
+    .join {
+      margin-left: 100px;
+      padding: 0;
+      text-align: start;
+    }
+    h5 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 15px;
+      /*line-height: 1.6;*/
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      padding-top: 70px;
+      padding-bottom: 50px;
+    }
+
+    .centre {
+      text-align: center;
+    }
+
+    p,
+    h5 {
+      font-family: "Inter", sans-serif;
+      max-width: 60ch;
+    }
+
+    .grøn-text {
+      color: #3c4b04;
+    }
+
+    .grøn {
+      background-color: #b2be86;
+      padding-top: 10px;
+      padding-bottom: 30px;
+      margin: -20px;
+    }
+
+    .gallery-text {
+      max-width: 800px;
+      margin-left: 60px;
+    }
+    .gallery {
+      margin-left: 105px;
+      padding-top: 10px;
+      gap: 0;
+      flex-direction: row;
+    }
+    .pic1,
+    .pic2,
+    .pic3,
+    .pic4 {
+      display: block;
+      width: auto;
+      height: 500px;
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .v {
+      position: absolute;
+      top: 45%;
+      left: 0%;
+      z-index: 10;
+      transform: translate(0, 0);
+
+      margin-left: 40px;
+    }
+    .h {
+      position: absolute;
+      top: 45%;
+      right: 2%;
+      z-index: 10;
+      transform: translate(0, 0);
+    }
+    .h img {
+      transform: scaleX(-1);
+      height: 50px;
+      width: 50px;
+    }
+    .v img {
+      height: 50px;
+      width: 50px;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .mørke-grøn {
+      background-color: #3c4b04;
+      width: 345px;
+      height: 530px;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+
+    .hvid-text {
+      color: white;
+    }
+
+    section {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+    }
+
+    .map {
+      border: 5px dashed #818c58;
+      padding: 40px 40px 20px 20px;
+      border-radius: 10px;
+      margin-left: 80px;
+
+      width: 550px;
+      max-width: 1200px;
+    }
+    .map img {
+      width: 100%;
+      height: auto;
+    }
+
+    .dot1 {
+      position: relative;
+      top: -250px;
+      left: 440px;
+    }
+    .dot2 {
+      position: relative;
+      top: -580px;
+      left: 350px;
+    }
+    .dot3 {
+      position: relative;
+      top: -580px;
+      left: 450px;
+    }
+    .dot1 img,
+    .dot2 img,
+    .dot3 img {
+      width: 70px;
+      height: 70px;
+    }
+
+    .list {
+      list-style: disc;
+      color: white;
+      margin: 60px;
+    }
+    .list li {
+      margin-bottom: 70px;
+    }
+    .list img {
+      margin-left: 90px;
+      height: 73px;
+    }
+    .bike img {
+      margin-left: 50px;
+      height: 53px;
+      margin-top: -50px;
+    }
+    .listings {
+      margin-top: -45px;
+    }
+
+    .last {
+      margin-top: 10px;
+      margin-right: 50px;
+      margin-left: 50px;
+      margin-bottom: 150px;
+      gap: 50px;
+    }
+
+    /* Live Map Hover*/
+
+    .dot-adress {
+      position: absolute;
+      top: 0px;
+      left: 35%;
+      transform: translateX(-100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+
+      background-color: #f4dfdf;
+      width: 185px;
+      height: 70px;
+      border: 2px solid #000000;
+      border-radius: 5px;
+      padding: 3px;
+    }
+    .dot-adress p {
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      margin-left: 5px;
+    }
+
+    .dot1:hover .dot-adress {
+      opacity: 1;
+    }
+    .dot2:hover .dot-adress {
+      opacity: 1;
+    }
+    .dot3:hover .dot-adress {
+      opacity: 1;
+    }
   }
 </style>
