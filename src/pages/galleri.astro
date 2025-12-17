@@ -18,83 +18,82 @@ import SoMecard from "../components/SoMecard.astro";
         <p>Experience photos from our events, and the excitement of The Matcha Bike through our dynamic social media presence. Take At Look At Some Of Our Pics from delicious moments at events to our vibrant community engagements.</p>
       </div>
 
-      <section class="gallery">
-        <!--Husk skift billeder, Lav 'scroll through gallery' & Tilføj knapper -->
-        <img src="https://picsum.photos/375/500" alt="" />
-        <img src="https://picsum.photos/375/500" alt="" />
-        <img src="https://picsum.photos/375/500" alt="" />
-        <img src="https://picsum.photos/375/500" alt="" />
-        <!-- 
-        <img src="https://picsum.photos/375/500" alt="" />
-        <img src="https://picsum.photos/375/500" alt="" />
-        <img src="https://picsum.photos/375/500" alt="" />
-        <img src="https://picsum.photos/375/500" alt="" />
-        <img src="https://picsum.photos/375/500" alt="" />
-        <img src="https://picsum.photos/375/500" alt="" />
-        <img src="https://picsum.photos/375/500" alt="" />
-        <img src="https://picsum.photos/375/500" alt="" />
-        <img src="https://picsum.photos/375/500" alt="" />
-        -->
-      </section>
-    </div>
+      <div class="flex">
+        <div class="v">
+          <img src="src/assets/scroll.svg" alt="Scroll pil-knap til venstre" />
+        </div>
 
-    <div>
-      <div class="center">
-        <h3>Follow Us For Daily Locations, Updates <span class="grøn-text">&</span> Behind-The-Scenes Content</h3>
+        <section class="gallery">
+          <!--Husk skift billeder, Lav 'scroll through gallery' & Tilføj knapper -->
+          <img src="src/assets/gallery-pic (4).webp" alt="Billede taget fra The Matcha Bike X envii event" />
+          <img src="src/assets/gallery-pic (3).webp" alt="Billede af The Matcha Bike på strøget" />
+          <img src="src/assets/gallery-pic (2).webp" alt="Billede af The Matcha Bike udenfor en envii butik" />
+          <img src="src/assets/gallery-pic (1).webp" alt="Billede af en hånd der holder en jordbær matcha latte" />
+        </section>
+
+        <div class="h">
+          <img src="src/assets/scroll.svg" alt="Scroll pil-knap til højre" />
+        </div>
       </div>
-      <section class="cards">
-        <SoMecard src="src/assets/insta-billede.webp" SomeBeskrivelse="@matchabikedk" srclogo="src/assets/inst.svg" SomeLink="https://www.instagram.com/matchabikedk/" />
-
-        <SoMecard src="src/assets/tiktok-billede.webp" SomeBeskrivelse="@matchabike" srclogo="src/assets/tik.svg" SomeLink="https://www.tiktok.com/@matchabike" />
-
-        <SoMecard src="src/assets/facebook-billede.webp" SomeBeskrivelse="@The Matcha Bike" srclogo="src/assets/face.svg" SomeLink="https://www.facebook.com/profile.php?id=61579941120830" />
-      </section>
-    </div>
-
-    <div>
-      <h3 class="join"><span class="grøn-text">Join us</span> 'On the Move'!</h3>
-
-      <section class="last">
-        <!--Lav interaktiv i js -->
-        <div class="live-map">
-          <div>
-            <img class="map" src="src/assets/map.svg" alt="map" />
-          </div>
-          <div class="dot1">
-            <img src="src/assets/location.svg" alt="current location icon" />
-            <div class="dot-adress">
-              <p>Hørsholmsgade 20, <br /> opgang C <br /> 2200 København N</p>
-            </div>
-          </div>
-          <div class="dot2">
-            <img src="src/assets/upcoming.svg" alt="upcoming events icon" /><div class="dot-adress">
-              <p>Hørsholmsgade 20, <br /> opgang C <br /> 2200 København N</p>
-            </div>
-          </div>
-          <div class="dot3">
-            <img src="src/assets/hotspot.svg" alt="customer hotspots icon" /><div class="dot-adress">
-              <p>Hørsholmsgade 20, <br /> opgang C <br /> 2200 København N</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="mørke-grøn">
-          <div class="list">
-            <h5 class="hvid-text">Follow Our Live Map</h5>
-
-            <li><p class="hvid-text">Current Location</p></li>
-            <div class="bike"><img src="src/assets/location.svg" alt="" /></div>
-
-            <li><p class="hvid-text">Upcoming Events</p></li>
-            <div class="listings"><img src="src/assets/upcoming.svg" alt="" /></div>
-
-            <li><p class="hvid-text">Customer Hotspots</p></li>
-            <div class="listings"><img src="src/assets/hotspot.svg" alt="" /></div>
-          </div>
-        </div>
-      </section>
     </div>
   </main>
+
+  <div>
+    <div class="center">
+      <h3>Follow Us For Daily Locations, Updates <span class="grøn-text">&</span> Behind-The-Scenes Content</h3>
+    </div>
+    <section class="cards">
+      <SoMecard src="src/assets/insta-billede.webp" SomeBeskrivelse="@matchabikedk" srclogo="src/assets/inst.svg" SomeLink="https://www.instagram.com/matchabikedk/" />
+
+      <SoMecard src="src/assets/tiktok-billede.webp" SomeBeskrivelse="@matchabike" srclogo="src/assets/tik.svg" SomeLink="https://www.tiktok.com/@matchabike" />
+
+      <SoMecard src="src/assets/facebook-billede.webp" SomeBeskrivelse="@The Matcha Bike" srclogo="src/assets/face.svg" SomeLink="https://www.facebook.com/profile.php?id=61579941120830" />
+    </section>
+  </div>
+
+  <div>
+    <h3 class="join"><span class="grøn-text">Join us</span> 'On the Move'!</h3>
+
+    <section class="last">
+      <!--Lav måske interaktiv i js -->
+      <div class="live-map">
+        <div>
+          <img class="map" src="src/assets/map.svg" alt="map" />
+        </div>
+        <div class="dot1">
+          <img src="src/assets/location.svg" alt="current location icon" />
+          <div class="dot-adress">
+            <p>Hørsholmsgade 20, <br /> opgang C <br /> 2200 København N</p>
+          </div>
+        </div>
+        <div class="dot2">
+          <img src="src/assets/upcoming.svg" alt="upcoming events icon" /><div class="dot-adress">
+            <p>Hørsholmsgade 20, <br /> opgang C <br /> 2200 København N</p>
+          </div>
+        </div>
+        <div class="dot3">
+          <img src="src/assets/hotspot.svg" alt="customer hotspots icon" /><div class="dot-adress">
+            <p>Hørsholmsgade 20, <br /> opgang C <br /> 2200 København N</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mørke-grøn">
+        <div class="list">
+          <h5 class="hvid-text">Follow Our Live Map</h5>
+
+          <li><p class="hvid-text">Current Location</p></li>
+          <div class="bike"><img src="src/assets/location.svg" alt="" /></div>
+
+          <li><p class="hvid-text">Upcoming Events</p></li>
+          <div class="listings"><img src="src/assets/upcoming.svg" alt="" /></div>
+
+          <li><p class="hvid-text">Customer Hotspots</p></li>
+          <div class="listings"><img src="src/assets/hotspot.svg" alt="" /></div>
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
 
 <style>
@@ -117,6 +116,7 @@ import SoMecard from "../components/SoMecard.astro";
   }
   h2 {
     font-size: 48px;
+    margin-bottom: 0px;
   }
   h3 {
     font-size: 40px;
@@ -127,7 +127,7 @@ import SoMecard from "../components/SoMecard.astro";
     max-width: 40ch;
   }
   .join {
-    margin-left: 60px;
+    margin-left: 100px;
     padding: 0;
     text-align: start;
   }
@@ -165,7 +165,6 @@ import SoMecard from "../components/SoMecard.astro";
     padding-top: 10px;
     padding-bottom: 30px;
     margin: -20px;
-    margin-top: 20px;
   }
 
   .gallery-text {
@@ -173,9 +172,28 @@ import SoMecard from "../components/SoMecard.astro";
     margin-left: 60px;
   }
   .gallery {
-    margin-left: 20px;
-    padding-top: 20px;
+    margin-left: 15px;
+    padding-top: 10px;
     gap: 0;
+  }
+
+  .flex {
+    display: flex;
+    position: relative;
+  }
+  .v {
+    align-content: center;
+    margin-left: 40px;
+  }
+  .h {
+    position: absolute;
+    top: 45%;
+    right: 2%;
+    z-index: 10;
+    transform: translate(0, 0);
+  }
+  .h img {
+    transform: scaleX(-1);
   }
 
   .cards {
@@ -248,7 +266,8 @@ import SoMecard from "../components/SoMecard.astro";
   }
 
   .last {
-    margin-bottom: 40px;
+    margin-right: 50px;
+    margin-left: 50px;
     gap: 250px;
   }
 
@@ -286,5 +305,3 @@ import SoMecard from "../components/SoMecard.astro";
     opacity: 1;
   }
 </style>
-
-<sricpt> // Live Map Hover </sricpt>
