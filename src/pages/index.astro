@@ -15,8 +15,8 @@ import Indexcard from "../components/Indexcard.astro";
       </p>
   
       <div class="header-buttons">
-        <button class="b1">Book Now</button>
-        <button class="b2">Menu</button>  
+        <a href="/book" class="b1">Book Now</a>
+        <a href="/menu" class="b2">Menu</a>
       </div>
       <section class="grid-section">
         <Indexcard
@@ -50,7 +50,7 @@ import Indexcard from "../components/Indexcard.astro";
           <p>Drive foot traffic, increase brand visibility, and create memorable customer experiences through strategic partnerships with The Matcha Bike.</p>
           <p><br><strong>Storefront Partnerships</strong></p>
           <p>2,500 DKK for 8 hours in front of your store (or inside if bad weather). You provide discount coupons for joint promotions while we drive foot traffic to your business.</p>
-          <button class="b3">Partner With Us</button>  
+          <a href="/partner" class="b3">Partner With Us</a>
         </div>
         <img class="img-grid" src="https://picsum.photos/300/400" alt="">
       </section>
@@ -64,32 +64,38 @@ position:absolute;
 top: 75%;
 left: 40px;
 display: flex;
-gap: 10px;
 gap: 20px;
 
 
 
     }
-.b1{
-background-color:#818C58;
-border-radius: 20px;
-border:3px solid #000000;
-padding: 20px 20px;
-width: 200px;
-height: 60px;
-color: rgb(22, 45, 26);
+    .b1{
+  background-color:#818C58;
+  border-radius: 20px;
+  border:3px solid #000000;
+  padding: 10;
+  width: 200px;
+  height: 60px;
+  color: rgb(22, 45, 26);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
 
-     
-    }
 .b2{
-background-color: #FFBBEA;
-border-radius: 20px;
-border:3px solid #000000;
-width: 200px;
-height: 60px;
-color: rgb(22, 45, 26);
+  background-color: #FFBBEA;
+  border-radius: 20px;
+  border:3px solid #000000;
+  width: 200px;
+  height: 60px;
+  color: rgb(22, 45, 26);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
 
-    }
 
 .overskrift1{
 text-align: center;
@@ -110,13 +116,16 @@ text-align: center;
 }
 
 .b3{
-    background-color:#818C58;
-border-radius: 20px;
-border:3px solid #000000;
-width: 200px;
-height: 60px;
-color: rgb(22, 45, 26);
-
+  background-color:#818C58;
+  border-radius: 20px;
+  width: 200px;
+  height: 50px;
+  color: rgb(22, 45, 26);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 20px;
 }
 
 a:hover {
