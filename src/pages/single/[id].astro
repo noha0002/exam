@@ -1,4 +1,6 @@
 ---
+import Layout from "../../layouts/Layout.astro";
+
 export async function getStaticPaths() {
   const url =
     "https://vbpmdrgfyaoqwntxnhhw.supabase.co/rest/v1/products-matcha";
@@ -26,10 +28,105 @@ const { id } = Astro.params;
 const { post } = Astro.props;
 ---
 
-<h1>{id}: {post.name}</h1>
-<img
-  src={`https://vbpmdrgfyaoqwntxnhhw.supabase.co/storage/v1/object/public/products/${post.image}`}
-  alt={post.name}
-  width="300"
-  height="250"
-/>
+<Layout>
+  <div>
+    <a href="/liste-view" class="back">BACK</a>
+  </div>
+  <section>
+    <div class="image-container">
+      <img
+        src={`https://vbpmdrgfyaoqwntxnhhw.supabase.co/storage/v1/object/public/products/${post.image}`}
+        alt={post.name}
+        width="300"
+        height="250"
+      />
+    </div>
+    <div class="container-grid">
+      <h1>{post.name}</h1>
+      <h3>Product Description:</h3>
+      <p>{post.description}</p>
+      <h3>Ingredients List:</h3>
+      <p>{post.desc}</p>
+      <h4>{post.price},-</h4>
+      <hr />
+      <h5>Nutritional Information (Per Serving):</h5>
+      <p class="value">{post.value}</p>
+    </div>
+  </section>
+  
+</Layout>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@400;700;800;900&display=swap");
+  h1 {
+    font-family: "Gluten", serif, bold;
+    color: #3c4b04;
+  }
+  .back {
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: #f4dfdf;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 2%;
+    font-size: 1.7vh;
+    font-family: "Gluten", serif, bold;
+  }
+
+  hr{
+    background-color: #ffbbea;
+    padding: 0.2%;
+    border: none;
+  }
+  .value {
+    text-decoration: dotted;
+    width: 60%;
+    color: #818c58;
+  }
+  h3 {
+    color: #818c58;
+  }
+  h4 {
+    background-color: #f4dfdf;
+    width: 15%;
+    padding: 2%;
+    text-align: center;
+    margin-left: 80%;
+    border-radius: 5%;
+    font-family: "Gluten", serif, bold;
+  }
+  h5 {
+    color: #818c58;
+  }
+  .container-grid {
+    width: 60%;
+    margin-bottom: 2%;
+  }
+  .image-container {
+    background-color: #f4dfdf;
+    padding: 2rem;
+    width: 400px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5%;
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+  img {
+    width: 450px;
+    height: 340px;
+    border-radius: 3%;
+    margin-top: -30px;
+  }
+
+  section {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    justify-items: center;
+  }
+  
+</style>
