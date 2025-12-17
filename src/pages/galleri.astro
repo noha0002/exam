@@ -61,18 +61,16 @@ import SoMecard from "../components/SoMecard.astro";
         <div class="dot1">
           <img src="/assets/location.svg" alt="current location icon" />
           <div class="dot-adress">
-            <p>Hørsholmsgade 20, <br /> opgang C <br /> 2200 København N</p>
+            <p>Sundbyvester Pl<br /><br /> 2300 København</p>
           </div>
         </div>
         <div class="dot2">
           <img src="/assets/upcoming.svg" alt="upcoming events icon" /><div class="dot-adress">
-            <p>Hørsholmsgade 20, <br /> opgang C <br /> 2200 København N</p>
+            <p>Guldbergsgade 29N <br /> <br /> 2200 København</p>
           </div>
         </div>
         <div class="dot3">
-          <img src="/assets/hotspot.svg" alt="customer hotspots icon" /><div class="dot-adress">
-            <p>Hørsholmsgade 20, <br /> opgang C <br /> 2200 København N</p>
-          </div>
+          <img src="/assets/hotspot.svg" alt="customer hotspots icon" /><div class="dot-adress"><p>Kongens Nytorv 11<br /><br /> 1050 København K</p></div>
         </div>
       </div>
 
@@ -261,9 +259,6 @@ import SoMecard from "../components/SoMecard.astro";
     position: relative;
     top: -390px;
     left: 230px;
-
-    max-width: 50px;
-    max-height: 50px;
   }
   .dot1 img,
   .dot2 img,
@@ -351,7 +346,8 @@ import SoMecard from "../components/SoMecard.astro";
       max-width: 40ch;
     }
     .join {
-      margin-left: 100px;
+      margin-left: 150px;
+      margin-bottom: 10px;
       padding: 0;
       text-align: start;
     }
@@ -396,7 +392,7 @@ import SoMecard from "../components/SoMecard.astro";
       margin-left: 60px;
     }
     .gallery {
-      margin-left: 105px;
+      margin-left: 90px;
       padding-top: 10px;
       gap: 0;
       flex-direction: row;
@@ -469,7 +465,7 @@ import SoMecard from "../components/SoMecard.astro";
       border: 5px dashed #818c58;
       padding: 40px 40px 20px 20px;
       border-radius: 10px;
-      margin-left: 80px;
+      margin-left: 70px;
 
       width: 550px;
       max-width: 1200px;
@@ -524,18 +520,17 @@ import SoMecard from "../components/SoMecard.astro";
 
     .last {
       margin-top: 10px;
-      margin-right: 50px;
       margin-left: 50px;
       margin-bottom: 150px;
-      gap: 50px;
+      gap: 200px;
     }
 
     /* Live Map Hover*/
 
     .dot-adress {
       position: absolute;
-      top: 0px;
-      left: 35%;
+      top: -30px;
+      left: 270px;
       transform: translateX(-100%);
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -550,6 +545,7 @@ import SoMecard from "../components/SoMecard.astro";
     }
     .dot-adress p {
       font-family: "Inter", sans-serif;
+      font-weight: 600;
       font-size: 13px;
       margin-left: 5px;
     }
