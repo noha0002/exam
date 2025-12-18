@@ -19,7 +19,13 @@ const { indexTitel, image, indexTekst, buttonText, buttonLink } = Astro.props;
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;600&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
 
-.index-card {
+
+.index-card:nth-child(2)
+{
+    background-color:#818C58;
+}
+
+  .index-card {
   background: #F2C4E2;
   border-radius: 24px;
   padding: 0;
@@ -31,6 +37,8 @@ const { indexTitel, image, indexTekst, buttonText, buttonLink } = Astro.props;
   margin: 0 auto;
   
 }
+
+ 
 
 .card-image {
   width: 100%;

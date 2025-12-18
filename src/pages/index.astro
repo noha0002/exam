@@ -26,15 +26,16 @@ import Indexcard from "../components/Indexcard.astro";
           buttonText="Read more"
           buttonLink="/events"
         />
-      
-        <Indexcard
+        
+        <Indexcard 
           indexTitel="Menu"
           indexTekst="Indulge in our delicious matcha lattes and homemade matcha cookies — perfect for a refreshing boost anytime, anywhere!"
           image="/green.webp"
           buttonText="View menu"
           buttonLink="/liste-views"
         />
-      
+    
+  
         <Indexcard
           indexTitel="Gallery"
           indexTekst="Stay connected with us through vibrant social media, interactive map, and captivating gallery."
@@ -64,8 +65,11 @@ import Indexcard from "../components/Indexcard.astro";
   @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@600&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;600&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
-
-    .header-buttons {
+  
+  .special{
+    background-color: black;
+  }
+  .header-buttons {
 position:absolute;
 top: 75%;
 left: 40px;
@@ -82,11 +86,12 @@ gap: 20px;
   padding: 10;
   width: 200px;
   height: 60px;
-  color: rgb(22, 45, 26);
+  color: rgb(255, 255, 255);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  font-size: 150%;
 }
 
 .b2{
@@ -95,11 +100,12 @@ gap: 20px;
   border:1px solid #ffffff;
   width: 200px;
   height: 60px;
-  color: rgb(22, 45, 26);
+  color: rgb(255, 255, 255);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  font-size: 150%;
 }
 
 
@@ -121,17 +127,23 @@ text-align: center;
   padding: 80px 40px;
 }
 
+
+h2 {
+    font-size: 200%;
+}
+
 .b3{
   background-color:#818C58;
   border-radius: 20px;
   width: 200px;
   height: 50px;
-  color: rgb(22, 45, 26);
+  color: rgb(255, 255, 255);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   margin-top: 20px;
+  font-size: 20px;
 }
 
 a:hover {
