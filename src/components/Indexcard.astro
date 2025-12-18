@@ -15,11 +15,15 @@ const { indexTitel, image, indexTekst, buttonText, buttonLink } = Astro.props;
   </article>
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@600&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;600&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+
 .index-card {
   background: #F2C4E2;
   border-radius: 24px;
   padding: 0;
-  width: 95%;
+  width: 80%;
   overflow: hidden;
   text-align: center;
   display: flex;
@@ -64,4 +68,15 @@ padding-bottom: 32px;
   }
   a:hover {
     border: 2px solid black;  } 
+
+    h1,h2 {
+    font-family: "Gluten";
+}
+
+a  {
+    font-family: "Gochi Hand";
+}
+p {
+    font-family: "inter";
+}
 </style>
