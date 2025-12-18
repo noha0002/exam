@@ -5,7 +5,7 @@ import Indexcard from "../components/Indexcard.astro";
 
 <Layout> 
     <section class="hero">
-      <img src="https://picsum.photos/1480/680" alt="matchabike">
+        <img src="/mat.webp" width="100%" height="600">
   
       <h1 class="overskrift">COPENHAGEN’S</h1>
       <h1 class="overskrift1">MOBILE MATCHA EXPERIENCE</h1>
@@ -22,7 +22,7 @@ import Indexcard from "../components/Indexcard.astro";
         <Indexcard
           indexTitel="Events"
           indexTekst="Elevate your events - any special occasion, private or business, with our premium mobile matcha service and artisanal treats."
-          image="https://picsum.photos/1480/680"
+          image="/mati.webp"
           buttonText="Read more"
           buttonLink="/events"
         />
@@ -30,35 +30,41 @@ import Indexcard from "../components/Indexcard.astro";
         <Indexcard
           indexTitel="Menu"
           indexTekst="Indulge in our delicious matcha lattes and homemade matcha cookies — perfect for a refreshing boost anytime, anywhere!"
-          image="https://picsum.photos/1480/680"
+          image="/green.webp"
           buttonText="View menu"
-          buttonLink="/liste-view"
+          buttonLink="/liste-views"
         />
       
         <Indexcard
           indexTitel="Gallery"
           indexTekst="Stay connected with us through vibrant social media, interactive map, and captivating gallery."
-          image="https://picsum.photos/1480/680"
+          image="/mat.webp"
           buttonText="Gallery"
           buttonLink="/galleri"
         />
       </section>
-
+    
       <section class="grid2">
         <div class="text-content">
-          <h1>Partnership Opportunities</h1>
+          <h2>Partnership Opportunities</h2>
           <p>Drive foot traffic, increase brand visibility, and create memorable customer experiences through strategic partnerships with The Matcha Bike.</p>
           <p><br><strong>Storefront Partnerships</strong></p>
           <p>2,500 DKK for 8 hours in front of your store (or inside if bad weather). You provide discount coupons for joint promotions while we drive foot traffic to your business.</p>
           <a href="/partner" class="b3">Partner With Us</a>
         </div>
-        <img class="img-grid" src="https://picsum.photos/300/400" alt="">
+        <img class="img-grid" src="/butik.webp" height="395" width="302" alt="">
       </section>
+
+      <img class="cykel" src="/Vector.webp"  alt="vektor bike">
       
 </Layout>
   
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@600&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;600&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+
     .header-buttons {
 position:absolute;
 top: 75%;
@@ -72,7 +78,7 @@ gap: 20px;
     .b1{
   background-color:#818C58;
   border-radius: 20px;
-  border:3px solid #000000;
+  border:1px solid #ffffff;
   padding: 10;
   width: 200px;
   height: 60px;
@@ -86,7 +92,7 @@ gap: 20px;
 .b2{
   background-color: #FFBBEA;
   border-radius: 20px;
-  border:3px solid #000000;
+  border:1px solid #ffffff;
   width: 200px;
   height: 60px;
   color: rgb(22, 45, 26);
@@ -129,7 +135,9 @@ text-align: center;
 }
 
 a:hover {
-    border: 2px solid black;
+
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
 }
 .grid2 {
   display: grid;
@@ -143,7 +151,90 @@ a:hover {
 
 .img-grid{
     padding-left: 30%;
-    padding-top: 20%;
+    padding-top: 10 %;
+    position: relative;
+}
+.cykel {
+    margin-left: 30%;
+    padding-bottom: 6%;
+}
+
+h1,h2 {
+    font-family: "Gluten";
+}
+
+a  {
+    font-family: "Gochi Hand";
+}
+p {
+    font-family: "inter";
+}
+
+@media (max-width: 768px) {
+
+.hero img {
+  height: auto;
+}
+
+.overskrift,
+.overskrift1,
+.ptekst {
+  padding: 0 16px;
+  text-align: center;
+}
+
+.header-buttons {
+  position: static;
+  justify-content: center;
+  margin-top: 23px;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: 20%;
+}
+
+.b1,
+.b2 {
+  width: 100%;
+  max-width: 280px;
+}
+
+
+.grid-section {
+  grid-template-columns: 1fr;
+  padding: 40px 16px;
+}
+
+
+.grid2 {
+  grid-template-columns: 1fr;
+  padding: 40px 16px;
+  text-align: center;
+}
+
+.text-content {
+  order: 1;
+}
+
+.img-grid {
+  order: 2;
+  padding: 0;
+  margin: 20px auto 0;
+  width: 100%;
+  max-width: 300px;
+}
+
+.b3 {
+  margin: 20px auto 0;
+}
+
+
+.cykel {
+  display: block;
+  margin: 40px auto;
+  padding: 0;
+  width: 80%;
+  max-width: 300px;
+}
 }
 
 
